@@ -168,7 +168,7 @@ grep -d skip "NULL ciphers.*NOT" * | tr _p : | cut -d "-" -f1 > testssl-Parser/N
 grep -d skip "Anonymous NULL.*NOT" * | tr _p : | cut -d "-" -f1 > testssl-Parser/Anonymous_NULL_Ciphers_Offered.txt
 grep -d skip "Export ciphers.*NOT" * | tr _p : | cut -d "-" -f1 > testssl-Parser/Export_Ciphers_Offered.txt
 grep -d skip "LOW.*NOT" * | tr _p : | cut -d "-" -f1 > testssl-Parser/LOW_Ciphers_Offered.txt
-grep -d skip "Triple DES.*offered" * | tr _p : | cut -d "-" -f1 > testssl-Parser/3DES_IDEA_Ciphers_Offered.txt
+grep -d skip "Triple DES.*offered" * | grep -v "not" | tr _p : | cut -d "-" -f1 > testssl-Parser/3DES_IDEA_Ciphers_Offered.txt
 grep -d skip "Obsoleted CBC.*offered" * | tr _p : | cut -d "-" -f1 > testssl-Parser/Obsolete_CBC_Ciphers_Offered.txt
 grep -d skip "Strong encryption.*not offered" * | tr _p : | cut -d "-" -f1 > testssl-Parser/Strong_Encryption_no_FS_Not_Offered.txt
 grep -d skip "Forward Secrecy strong.*not offered" * | tr _p : | cut -d "-" -f1 > testssl-Parser/Forward_Secrecy_Strong_Encryption_Not_Offered.txt
